@@ -23,7 +23,7 @@ psql <YOUR_DATABASE_URL> < database/pg-data.sql
 ```graphql
 mutation CreateCareer($input: CareerInput!) {
   createCareer(input: $input) {
-		id
+    id
     name
   }
 }
@@ -41,7 +41,7 @@ Variables
 ```graphql
 mutation CreateStudent($input: StudentInput!) {
   createStudent(input: $input) {
-		id
+    id
     email
     username
     career {
