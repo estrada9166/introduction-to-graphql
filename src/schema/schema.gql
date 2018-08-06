@@ -1,0 +1,37 @@
+type Student {
+  id: ID!
+  email: String!
+  username: String!
+  career: Career!
+}
+
+type Career {
+  id: ID!
+  name: String!
+  students: [Student]
+}
+
+# MUTATIONS
+# Create a new Student
+input StudentInput {
+  email: String!
+  username: String!
+  careerId: ID!
+}
+
+# Career
+input CareerInput {
+  name: String!
+}
+
+type Query {
+  geAllStudents: [Student]
+  getStudentById(studentId: ID!): Student
+  getAllCareers: [Career]
+  getCareerById(careerID: ID!): Career
+}
+
+type Mutation {
+  createStudent(input: StudentInput!): Student
+  createCareer(input: CareerInput!): Career
+}
